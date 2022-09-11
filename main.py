@@ -14,10 +14,7 @@ def resizer(file: UploadFile = File(description="Return Pdf")):
     try:
         contents = file.file.read()
         process_file(contents)
-        # with open(file.filename, 'wb') as f:
-        #         f.write(contents)
     except Exception:
-        raise
         return {"message": "There was an error uploading the file"}
     finally:
         file.file.close()

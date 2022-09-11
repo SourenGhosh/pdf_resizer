@@ -26,7 +26,6 @@ def split_into_mul_pages(page, runnning_page_height, writer):
     for i in range(no_of_split):
         
         part=copy.deepcopy(page)
-        print(type(part))
         part.mediaBox.upperLeft = page_upperleft
         part.mediaBox.LowerLeft = (page_upperleft[0], page_upperleft[1]-DEFINED_DIMENSION.HEIGHT)
         page_upperleft = (page_upperleft[0], page_upperleft[1]-DEFINED_DIMENSION.HEIGHT)
@@ -47,7 +46,6 @@ def process_file(contents):
         )
 
     num_pages = chunk_pdf.getNumPages()
-    print(num_pages)
     writer = PdfFileWriter()
     for page_no in range(num_pages):
         running_page = chunk_pdf.getPage(page_no)
